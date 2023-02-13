@@ -1,0 +1,23 @@
+spring:
+  config:
+    activate:
+      on-profile: default
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.234.53.68:3306/my_database?allowPublicKeyRetrieval=true&useSSL=false&autoReconnect=true
+    username: root
+    password: hMckpkj6VQ
+    hikari:
+      prepStmtCacheSize: 256
+      prepStmtCacheSqlLimit: 2048
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        dialect: org.hibernate.dialect.MySQLDialect
